@@ -52,11 +52,46 @@ function addAnother() {
     }
   }
   else {
-    alert('Check that phone number.')
+    alert('Check that phone number.');
     return false;
   }
 }
 
-function chooseCity() {
-  
+function chooseCity(e) {
+  // e.preventDefault();
+  var cities = [];
+
+  for (var i = 0; i < mentors.length; i++) {
+    console.log(mentors[i]);
+    cities.push(mentors[i].city);
+  }
+
+  var newRow = document.createElement('div');
+  var choose = document.createElement('div');
+  var newBtn = document.createElement('button');
+  newRow.className = 'row padded-top';
+  choose.className = 'col-xs-12';
+  newBtn.className = 'btn btn-primary';
+  newBtn.innerHTML = 'Go';
+
+  choose.appendChild(addSelect(cities));
+  choose.appendChild(newBtn);
+  newRow.appendChild(choose);
+  document.getElementsByClassName('container')[0].appendChild(newRow);
+
+}
+
+function addSelect(optArray) {
+  //optArray - the things to add to the dropdown
+  var newSelect = document.createElement('select');
+  var options = [];
+
+  newSelect.className = 'form-control';
+  for (var i = 0; i < optArray.length; i++) {
+    var newOpt = document.createElement('option');
+    newOpt.innerHTML = optArray[i];
+    newSelect.appendChild(newOpt);
+  }
+
+  return newSelect;
 }
