@@ -6,9 +6,6 @@
     <!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-      body {padding-top: 30px;}
-    </style>
     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
@@ -23,7 +20,7 @@
           <form>
 
             <div class="form-group">
-              <select class="form-control">
+              <select class="form-control" id="arr">
                 <option>Student</option>
                 <option>Mentor</option>
               </select>
@@ -58,7 +55,7 @@
             </div>
 
             <button type="button" class="btn btn-default" onclick="addAnother()">Add Another</button>
-            <button type="button" class="btn btn-primary" onclick="chooseCity()">Submit All</button>
+            <button type="button" class="btn btn-primary" onclick="subAll()">Submit All</button>
           </form>
 
         </div>
